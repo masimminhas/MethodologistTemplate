@@ -24,3 +24,4 @@ Useful Links
 Details about the build process and configurations can be found in the readmes of the relevant projects.
 * https://github.com/vitruv-tools/Maven-Build-Parent/blob/main/readme.md
 * https://github.com/vitruv-tools/EMF-Template/blob/main/readme.md
+"# MethodologistTemplate" 
