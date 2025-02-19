@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="raaml" nsURI="http://vitruv.tools/methodologisttemplate/raaml"
+    nsPrefix="raaml">
+  <eClassifiers xsi:type="ecore:EClass" name="SafetyAnalysis">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="analysismethods" upperBound="-1"
+        eType="#//methods/AnalysisMethods" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="raamllibraries" upperBound="-1"
+        eType="#//raamllibraries/RAAMLLibraries" containment="true"/>
+  </eClassifiers>
+  <eSubpackages name="corePackage" nsURI="http://vitruv.tools/methodologisttemplate/raaml/corePackage"
+      nsPrefix="corePackage">
+    <eClassifiers xsi:type="ecore:EClass" name="CoreSafetyElement" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Situation" eSuperTypes="#//corePackage/UMLClass #//corePackage/SysMLBlock #//corePackage/CoreSafetyElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UMLClass" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SysMLBlock" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ControllingMeasure" eSuperTypes="#//corePackage/DirectedPropertyRelationshipPath #//corePackage/Dependency #//corePackage/CoreSafetyElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="affects" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FailureMode" eSuperTypes="#//corePackage/Situation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Hazard" eSuperTypes="#//corePackage/Situation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Error" eSuperTypes="#//corePackage/Situation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Fault" eSuperTypes="#//corePackage/Situation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Detection" eSuperTypes="#//corePackage/ControllingMeasure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Recommendation" eSuperTypes="#//corePackage/ControllingMeasure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Mitigation" eSuperTypes="#//corePackage/ControllingMeasure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Prevention" eSuperTypes="#//corePackage/ControllingMeasure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DirectedPropertyRelationshipPath"
+        abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Dependency" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RelevantTo" eSuperTypes="#//corePackage/DirectedPropertyRelationshipPath #//corePackage/Dependency #//corePackage/CoreSafetyElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PresentIn" eSuperTypes="#//corePackage/RelevantTo"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Violates" eSuperTypes="#//corePackage/Dependency #//corePackage/CoreSafetyElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IDCarrier" eSuperTypes="#//corePackage/Element">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true" eSuperTypes="#//corePackage/CoreSafetyElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Undeveloped" eSuperTypes="#//corePackage/Element"/>
+    <eClassifiers xsi:type="ecore:EClass" name="State" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FailureState" eSuperTypes="#//corePackage/State #//corePackage/CoreSafetyElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Item" abstract="true" eSuperTypes="#//corePackage/Element">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="member" upperBound="-1"
+          eType="#//corePackage/Element"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="boundaryMember" upperBound="-1"
+          eType="#//corePackage/Element"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SingleElementItem" eSuperTypes="#//corePackage/Item">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="referencedElement" lowerBound="1"
+          eType="#//corePackage/Item"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Comment" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ElementGroup" eSuperTypes="#//corePackage/Comment">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="criterion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="orderedMember" upperBound="-1"
+          eType="#//corePackage/Element"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ElementGroupBasedItem" eSuperTypes="#//corePackage/Item #//corePackage/ElementGroup"/>
+  </eSubpackages>
+  <eSubpackages name="methods" nsURI="http://vitruv.tools/methodologisttemplate/raaml/methods"
+      nsPrefix="methods">
+    <eClassifiers xsi:type="ecore:EClass" name="AnalysisMethods" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coresafetyelement" upperBound="-1"
+          eType="#//corePackage/CoreSafetyElement" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FMEA" eSuperTypes="#//methods/AnalysisMethods">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fmeaitem" upperBound="-1"
+          eType="#//methods/FMEAItem" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FMEAItem" eSuperTypes="#//methods/UMLClass #//methods/SysMLBlock"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UMLClass" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SysMLBlock" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FTA" eSuperTypes="#//methods/AnalysisMethods">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="gate" upperBound="-1"
+          eType="#//methods/Gate" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="event" upperBound="-1"
+          eType="#//methods/Event" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Gate" eSuperTypes="#//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Tree" eSuperTypes="#//methods/Situation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AND" eSuperTypes="#//methods/Gate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OR" eSuperTypes="#//methods/Gate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="XOR" eSuperTypes="#//methods/Gate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NOT" eSuperTypes="#//methods/Gate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="INHIBIT" eSuperTypes="#//methods/Gate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MAJORITY_VOTE" eSuperTypes="#//methods/Gate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Situation" abstract="true" eSuperTypes="#//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TransferOut" eSuperTypes="#//methods/Tree #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SEQ" eSuperTypes="#//methods/Gate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true" eSuperTypes="#//methods/UMLClass #//methods/UMLProperty"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TransferIn" eSuperTypes="#//methods/Tree #//methods/UMLProperty"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BasicEvent" eSuperTypes="#//methods/Event"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UMLProperty" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HouseEvent" eSuperTypes="#//methods/Event"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DormantEvent" eSuperTypes="#//methods/Event"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TopEvent" eSuperTypes="#//methods/Event"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IntermediateEvent" eSuperTypes="#//methods/Event"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ZeroEvent" eSuperTypes="#//methods/Event"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ConditionalEvent" eSuperTypes="#//methods/Event"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Signal" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ControlAction" eSuperTypes="#//methods/Signal #//methods/DataType #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Feedback" eSuperTypes="#//methods/Signal #//methods/DataType #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UndesiredControlAction" eSuperTypes="#//methods/Situation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UnsafeControlAction" eSuperTypes="#//methods/UndesiredControlAction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ControlledProcess" eSuperTypes="#//methods/UMLProperty #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Actuator" eSuperTypes="#//methods/UMLProperty #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//methods/UMLProperty #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//methods/UMLProperty #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ControlStrcucture" eSuperTypes="#//methods/SysMLBlock #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LossScenario" eSuperTypes="#//methods/Situation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ISO26262" eSuperTypes="#//methods/AnalysisMethods">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="malfunctioningbehaviour"
+          upperBound="-1" eType="#//methods/MalfunctioningBehaviour" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operationalsituation"
+          upperBound="-1" eType="#//methods/OperationalSituation" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="confirmed" upperBound="-1"
+          eType="#//methods/Confirmed" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="verified" upperBound="-1"
+          eType="#//methods/Verified" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="asilassignment" upperBound="-1"
+          eType="#//methods/ASILAssignment" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requirementcomponent"
+          upperBound="-1" eType="#//requirementsmanagement/RequirementComponent" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationalSituation" eSuperTypes="#//methods/Situation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MalfunctioningBehaviour" eSuperTypes="#//corePackage/FailureMode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Verified" eSuperTypes="#//methods/UMLClass">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="result" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ASIL">
+      <eLiterals name="noassignment"/>
+      <eLiterals name="QM" value="1"/>
+      <eLiterals name="A" value="2"/>
+      <eLiterals name="B" value="3"/>
+      <eLiterals name="C" value="4"/>
+      <eLiterals name="D" value="5"/>
+      <eLiterals name="AB" value="6" literal="A(B)"/>
+      <eLiterals name="AC" value="7" literal="A(C)"/>
+      <eLiterals name="AD" value="8" literal="A(D)"/>
+      <eLiterals name="BC" value="9" literal="B(C)"/>
+      <eLiterals name="CD" value="10" literal="C(D)"/>
+      <eLiterals name="AA" value="11" literal="A(A)"/>
+      <eLiterals name="BB" value="12" literal="B(B)"/>
+      <eLiterals name="CC" value="13" literal="C(C)"/>
+      <eLiterals name="DD" value="14" literal="D(D)"/>
+      <eLiterals name="QMA" value="15" literal="QM(A)"/>
+      <eLiterals name="QMB" value="16" literal="QM(B)"/>
+      <eLiterals name="QMC" value="17" literal="QM(C)"/>
+      <eLiterals name="QMD" value="18" literal="QM(D)"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="STPA" eSuperTypes="#//methods/AnalysisMethods">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="controller" upperBound="-1"
+          eType="#//methods/Controller" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sensor" upperBound="-1"
+          eType="#//methods/Sensor" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actuator" upperBound="-1"
+          eType="#//methods/Actuator" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="controlaction" upperBound="-1"
+          eType="#//methods/ControlAction" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="feedback" upperBound="-1"
+          eType="#//methods/Feedback" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="controlledprocess" upperBound="-1"
+          eType="#//methods/ControlledProcess" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="undesiredcontrolaction"
+          upperBound="-1" eType="#//methods/UndesiredControlAction" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="unsafecontrolaction"
+          upperBound="-1" eType="#//methods/UnsafeControlAction" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lossscenario" upperBound="-1"
+          eType="#//methods/LossScenario" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="controlstrcucture" upperBound="-1"
+          eType="#//methods/ControlStrcucture" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Confirmed" eSuperTypes="#//methods/UMLClass">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="result" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Comment" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LessonLearned" eSuperTypes="#//methods/Comment"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ASILAssignment" eSuperTypes="#//methods/Element">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ASIL" lowerBound="1"
+          eType="#//methods/ASIL" derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ASILOverride" eType="#//methods/ASIL"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ASILOverrideRationale" eSuperTypes="#//methods/Rationale"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Rationale" abstract="true" eSuperTypes="#//methods/Comment"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InContextOf" eSuperTypes="#//methods/Dependency"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SupportedBy" eSuperTypes="#//methods/Dependency"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Dependency" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Goal" eSuperTypes="#//methods/GSNArgumentNode #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Strategy" eSuperTypes="#//methods/GSNArgumentNode #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GSNArgumentNode" eSuperTypes="#//methods/GSNNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Solution" eSuperTypes="#//methods/GSNNode #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GSNNode" abstract="true" eSuperTypes="#//methods/Element">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ContextualInformation" abstract="true"
+        eSuperTypes="#//methods/Element">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="#//methods/ContextualInformation #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Justification" eSuperTypes="#//methods/ContextualInformation #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Assumption" eSuperTypes="#//methods/ContextualInformation #//methods/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GSN" eSuperTypes="#//methods/AnalysisMethods">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="contextualinformation"
+          upperBound="-1" eType="#//methods/ContextualInformation" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="gsnnode" upperBound="-1"
+          eType="#//methods/GSNNode" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="supportedby" upperBound="-1"
+          eType="#//methods/SupportedBy" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="incontextof" upperBound="-1"
+          eType="#//methods/InContextOf" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="requirementsmanagement" nsURI="http://vitruv.tools/methodologisttemplate/raaml/requirementsmanagement"
+      nsPrefix="requirementsmanagement">
+    <eClassifiers xsi:type="ecore:EClass" name="Abstraction" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IndependenceRequirement" eSuperTypes="#//requirementsmanagement/DeriveRequirement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DeriveRequirement" eSuperTypes="#//requirementsmanagement/Abstraction #//requirementsmanagement/RequirementComponent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ASILDecompose" eSuperTypes="#//requirementsmanagement/DeriveRequirement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Satisfy" eSuperTypes="#//requirementsmanagement/Abstraction #//requirementsmanagement/RequirementComponent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UserInfoRequirement" eSuperTypes="#//requirementsmanagement/Satisfy"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RecoveryRequirement" eSuperTypes="#//requirementsmanagement/Satisfy"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DependabilityRequirement" eSuperTypes="#//requirementsmanagement/Block #//requirementsmanagement/AbstractRequirement #//requirementsmanagement/RequirementComponent #//corePackage/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Requirement" eSuperTypes="#//requirementsmanagement/RequirementComponent #//corePackage/UMLClass">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FunctionalSafetyRequirement" eSuperTypes="#//requirementsmanagement/Requirement #//requirementsmanagement/DependabilityRequirement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Dependency" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SafeState" eSuperTypes="#//requirementsmanagement/Dependency #//requirementsmanagement/RequirementComponent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OperatingMode" eSuperTypes="#//requirementsmanagement/Dependency #//requirementsmanagement/RequirementComponent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SoftwareSafetyRequirement" eSuperTypes="#//requirementsmanagement/DependabilityRequirement #//requirementsmanagement/Requirement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HardwareSafetyRequirement" eSuperTypes="#//requirementsmanagement/DependabilityRequirement #//requirementsmanagement/Requirement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TechnicalSafetyRequirement" eSuperTypes="#//requirementsmanagement/DependabilityRequirement #//requirementsmanagement/Requirement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SafetyGoal" eSuperTypes="#//requirementsmanagement/DependabilityRequirement #//requirementsmanagement/Requirement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Block" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractRequirement" abstract="true"
+        eSuperTypes="#//requirementsmanagement/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Package" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HazardAndRiskAssessment" eSuperTypes="#//requirementsmanagement/Package #//requirementsmanagement/RequirementComponent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RequirementComponent" abstract="true"/>
+  </eSubpackages>
+  <eSubpackages name="raamllibraries" nsURI="http://vitruv.tools/methodologisttemplate/raaml/raamllibraries"
+      nsPrefix="raamllibraries">
+    <eClassifiers xsi:type="ecore:EClass" name="RAAMLLibraries" abstract="true" eSuperTypes="#//requirementsmanagement/Package"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GeneralLibrary" abstract="true" eSuperTypes="#//raamllibraries/RAAMLLibraries">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="anysituation" upperBound="-1"
+          eType="#//raamllibraries/AnySituation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AnySituation" abstract="true" eSuperTypes="#//corePackage/Situation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="from" upperBound="-1"
+          eType="#//raamllibraries/AnySituation" eOpposite="#//raamllibraries/AnySituation/to">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Causality"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="to" upperBound="-1" eType="#//raamllibraries/AnySituation"
+          eOpposite="#//raamllibraries/AnySituation/from"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Scenario" abstract="true" eSuperTypes="#//raamllibraries/AnySituation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scenariostep" upperBound="-1"
+          eType="#//raamllibraries/AnySituation" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" upperBound="-1"
+          eType="#//raamllibraries/AbstractEvent" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractRisk" abstract="true" eSuperTypes="#//raamllibraries/Scenario">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="score" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+          derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="harmpotential" upperBound="-1"
+          eType="#//raamllibraries/HarmPotential" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="harm" lowerBound="1"
+          upperBound="-1" eType="#//raamllibraries/AbstractEffect" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HarmPotential" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="undesiredcontrolaction"
+          upperBound="-1" eType="#//raamllibraries/UndesiredControlAction" eOpposite="#//raamllibraries/UndesiredControlAction/harmpotential">
+        <eAnnotations source="http://www.eclipse.org/emf/GenModel">
+          <details key="documentation" value="UndesiredControlActionHarmPotential"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/eSuperTypeInfo">
+          <details key="eSuperTypeInfo" value="Causality"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Factor" abstract="true" eSuperTypes="#//raamllibraries/AnySituation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processModelFlaw" upperBound="-1"
+          eType="#//raamllibraries/ProcessModelFlaw" eOpposite="#//raamllibraries/ProcessModelFlaw/causalFactor">
+        <eAnnotations source="http://www.eclipse.org/eSuperTypeInfo">
+          <details key="eSuperType" value="Causality"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Limitation" abstract="true" eSuperTypes="#//raamllibraries/Factor"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractEvent" abstract="true" eSuperTypes="#//raamllibraries/AnySituation">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="likelihood" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DysfunctionalEvent" abstract="true"
+        eSuperTypes="#//raamllibraries/AbstractEvent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Situation"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toError" upperBound="-1"
+          eType="#//raamllibraries/DysfunctionalEvent" eOpposite="#//raamllibraries/DysfunctionalEvent/fromError">
+        <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml" references="#//raamllibraries/DysfunctionalEvent/toError #//raamllibraries/DysfunctionalEvent/fromError">
+          <details key="documentation" value="ErrorPropagation"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fromError" upperBound="-1"
+          eType="#//raamllibraries/DysfunctionalEvent" eOpposite="#//raamllibraries/DysfunctionalEvent/toError"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="error" upperBound="-1"
+          eType="#//raamllibraries/DysfunctionalEvent" eOpposite="#//raamllibraries/DysfunctionalEvent/failure">
+        <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml" references="#//raamllibraries/DysfunctionalEvent/error #//raamllibraries/DysfunctionalEvent/failure">
+          <details key="documentation" value="ErrorRealization"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="failure" upperBound="-1"
+          eType="#//raamllibraries/DysfunctionalEvent" eOpposite="#//raamllibraries/DysfunctionalEvent/error"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fault" upperBound="-1"
+          eType="#//raamllibraries/AbstractCause" eOpposite="#//raamllibraries/AbstractCause/error">
+        <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml" references="#//raamllibraries/AbstractCause/error #//raamllibraries/DysfunctionalEvent/fault">
+          <details key="documentation" value="Activation"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractEffect" abstract="true" eSuperTypes="#//raamllibraries/DysfunctionalEvent">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UndesiredState" abstract="true" eSuperTypes="#//raamllibraries/DysfunctionalEvent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Effect" abstract="true" eSuperTypes="#//raamllibraries/AbstractEffect">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="premitigationSeverities"
+          upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Loss" abstract="true" eSuperTypes="#//raamllibraries/AbstractEffect"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractFailureMode" abstract="true"
+        eSuperTypes="#//raamllibraries/UndesiredState">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="FailureMode"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="detectability" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="premitigationDetectabilities"
+          unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FailureMode" abstract="true" eSuperTypes="#//raamllibraries/AbstractFailureMode">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="FailureMode"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractCause" abstract="true" eSuperTypes="#//raamllibraries/AbstractEvent #//raamllibraries/Factor">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="occurrence" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="premitigationOccurrences"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="error" upperBound="-1"
+          eType="#//raamllibraries/DysfunctionalEvent" eOpposite="#//raamllibraries/DysfunctionalEvent/fault"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Cause" abstract="true" eSuperTypes="#//raamllibraries/AbstractCause"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Hazard" abstract="true" eSuperTypes="#//raamllibraries/HarmPotential"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FMEALibrary" abstract="true" eSuperTypes="#//raamllibraries/RAAMLLibraries">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="abstractfmeaitem" upperBound="-1"
+          eType="#//raamllibraries/AbstractFMEAItem" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RPNCalculation" eSuperTypes="#//raamllibraries/ConstraintBlock">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="RPN" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="SEV" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="OCC" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="DET" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConstraintBlock" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractFMEAItem" abstract="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="FailureMode"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="RPN" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="failureMode" lowerBound="1"
+          eType="#//raamllibraries/AbstractFailureMode" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="finalEffect" lowerBound="1"
+          upperBound="-1" eType="#//raamllibraries/AbstractEffect" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cause" lowerBound="1"
+          upperBound="-1" eType="#//raamllibraries/AbstractCause" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FMEAItem" abstract="true" eSuperTypes="#//raamllibraries/AbstractFMEAItem">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rpncalculation" upperBound="-1"
+          eType="#//raamllibraries/RPNCalculation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LossOfFunction" abstract="true" eSuperTypes="#//raamllibraries/FailureMode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DegradationOfFunction" abstract="true"
+        eSuperTypes="#//raamllibraries/FailureMode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IntermittentFunction" abstract="true"
+        eSuperTypes="#//raamllibraries/FailureMode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PartialFunction" abstract="true" eSuperTypes="#//raamllibraries/FailureMode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ExceedingFunction" abstract="true"
+        eSuperTypes="#//raamllibraries/FailureMode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UnintendedFunction" abstract="true"
+        eSuperTypes="#//raamllibraries/FailureMode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DelayedFunction" abstract="true" eSuperTypes="#//raamllibraries/FailureMode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FTAElement" abstract="true" eSuperTypes="#//raamllibraries/DysfunctionalEvent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Situation"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceGate" eType="#//raamllibraries/Gate"
+          eOpposite="#//raamllibraries/Gate/sourceEvent">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="input"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true" eSuperTypes="#//raamllibraries/FTAElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Situation"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetGate" eType="#//raamllibraries/Gate"
+          eOpposite="#//raamllibraries/Gate/targetEvent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="INHIBITGate" upperBound="-1"
+          eType="#//raamllibraries/INHIBIT" eOpposite="#//raamllibraries/INHIBIT/condition"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BasicEvent" eSuperTypes="#//raamllibraries/Event">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;&lt;BasicEvent>>"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IntermediateEvent" eSuperTypes="#//raamllibraries/Event">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;&lt;IntermediateEvent>>"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ieProbability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+          derived="true">
+        <eAnnotations/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TopEvent" eSuperTypes="#//raamllibraries/Event">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;&lt;TopEvent>>"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tProbability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+          derived="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConditionalEvent" eSuperTypes="#//raamllibraries/Event">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;&lt;ConditionalEvent>>"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DormantEvent" eSuperTypes="#//raamllibraries/Event">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;&lt;DormantEvent>>"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UndevelopedEvent" eSuperTypes="#//raamllibraries/Event">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;&lt;BasicEvent>>,&lt;&lt;Undeveloped>>"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HouseEvent" eSuperTypes="#//raamllibraries/Event">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;&lt;HouseEvent>>"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="heProbability" eType="#//raamllibraries/HouseEventProbability"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="HouseEventProbability">
+      <eLiterals name="OCCURS"/>
+      <eLiterals name="NOT_OCCUR" value="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ZeroEvent" eSuperTypes="#//raamllibraries/Event">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenMode">
+        <details key="documentation" value="&lt;&lt;ZeroEvent>>"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="zeProbability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AND" eSuperTypes="#//raamllibraries/Gate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OR" eSuperTypes="#//raamllibraries/Gate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NOT" eSuperTypes="#//raamllibraries/Gate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="XOR" eSuperTypes="#//raamllibraries/Gate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SEQ" eSuperTypes="#//raamllibraries/Gate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="INHIBIT" eSuperTypes="#//raamllibraries/Gate">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="condition" upperBound="-1"
+          eType="#//raamllibraries/Event" eOpposite="#//raamllibraries/Event/INHIBITGate"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Gate" abstract="true" eSuperTypes="#//methods/Gate">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Situation"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEvent" upperBound="-1"
+          eType="#//raamllibraries/FTAElement" eOpposite="#//raamllibraries/FTAElement/sourceGate"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetEvent" lowerBound="1"
+          eType="#//raamllibraries/Event" eOpposite="#//raamllibraries/Event/targetGate"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MAJORITY_VOTE" eSuperTypes="#//raamllibraries/Gate">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="m" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FTATree" eSuperTypes="#//methods/Tree">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenMode">
+        <details key="documentation" value="&lt;&lt;Tree>>,&lt;&lt;Situation>>"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="topEvent" lowerBound="1"
+          eType="#//raamllibraries/Event" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FTALibrary" abstract="true" eSuperTypes="#//raamllibraries/RAAMLLibraries">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ftaelement" upperBound="-1"
+          eType="#//raamllibraries/FTAElement" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="gate" upperBound="-1"
+          eType="#//raamllibraries/Gate" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="Controllability">
+      <eLiterals name="C0"/>
+      <eLiterals name="C1" value="1"/>
+      <eLiterals name="C2" value="2"/>
+      <eLiterals name="C3" value="3"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="Exposure">
+      <eLiterals name="E0"/>
+      <eLiterals name="E1" value="1"/>
+      <eLiterals name="E2" value="2"/>
+      <eLiterals name="E3" value="3"/>
+      <eLiterals name="E4" value="4"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="Severity">
+      <eLiterals name="S0"/>
+      <eLiterals name="S1" value="1"/>
+      <eLiterals name="S2" value="2"/>
+      <eLiterals name="S3" value="3"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationalCondition" abstract="true"
+        eSuperTypes="#//methods/OperationalSituation #//raamllibraries/AbstractEvent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractOperationalSituation" abstract="true"
+        eSuperTypes="#//raamllibraries/OperationalCondition">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Exposure" lowerBound="1"
+          eType="#//raamllibraries/Exposure"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
+          eType="#//raamllibraries/OperationalCondition" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TypicalAutomotiveSituation" abstract="true"
+        eSuperTypes="#//raamllibraries/AbstractOperationalSituation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="trafficandpeople" upperBound="-1"
+          eType="#//raamllibraries/TrafficAndPeople" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="vehicleusage" upperBound="-1"
+          eType="#//raamllibraries/VehicleUsage" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="roadcondition" upperBound="-1"
+          eType="#//raamllibraries/RoadCondition" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="location" upperBound="-1"
+          eType="#//raamllibraries/Location" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="environmentalcondition"
+          upperBound="-1" eType="#//raamllibraries/EnvironmentalCondition" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TrafficAndPeople" abstract="true"
+        eSuperTypes="#//raamllibraries/OperationalCondition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="VehicleUsage" abstract="true" eSuperTypes="#//raamllibraries/OperationalCondition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RoadCondition" abstract="true" eSuperTypes="#//raamllibraries/OperationalCondition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Location" abstract="true" eSuperTypes="#//raamllibraries/OperationalCondition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="EnvironmentalCondition" abstract="true"
+        eSuperTypes="#//raamllibraries/OperationalCondition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AccidentScenario" abstract="true"
+        eSuperTypes="#//raamllibraries/DysfunctionalEvent">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="controllability" lowerBound="1"
+          eType="#//raamllibraries/Controllability"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="situation" lowerBound="1"
+          upperBound="-1" eType="#//raamllibraries/AbstractOperationalSituation" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="malfunctioingBehavior"
+          lowerBound="1" upperBound="-1" eType="#//raamllibraries/AnyMalfunction"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AnyMalfunction" abstract="true" eSuperTypes="#//raamllibraries/UndesiredState #//methods/MalfunctioningBehaviour"/>
+    <eClassifiers xsi:type="ecore:EClass" name="More" abstract="true" eSuperTypes="#//raamllibraries/AnyMalfunction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Less" abstract="true" eSuperTypes="#//raamllibraries/AnyMalfunction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Intermittent" abstract="true" eSuperTypes="#//raamllibraries/AnyMalfunction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Unintended" abstract="true" eSuperTypes="#//raamllibraries/AnyMalfunction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Early" abstract="true" eSuperTypes="#//raamllibraries/AnyMalfunction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Late" abstract="true" eSuperTypes="#//raamllibraries/AnyMalfunction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Inverted" abstract="true" eSuperTypes="#//raamllibraries/AnyMalfunction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ISO26262SafetyRequirementTemplate"
+        eSuperTypes="#//requirementsmanagement/DependabilityRequirement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ASIL" lowerBound="1"
+          eType="#//methods/ASIL"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="FTTI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Fault Tolerant Time Interval&#xD;&#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HazardousEvent" abstract="true" eSuperTypes="#//raamllibraries/AbstractRisk">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ASIL" upperBound="-1"
+          eType="#//methods/ASIL" derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hazard" upperBound="-1"
+          eType="#//raamllibraries/Hazard" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" lowerBound="1"
+          upperBound="-1" eType="#//raamllibraries/AccidentScenario" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="vehicleleveleffect" upperBound="-1"
+          eType="#//raamllibraries/VehicleLevelEffect" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="systemleveleffect" upperBound="-1"
+          eType="#//raamllibraries/SystemLevelEffect" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AutomotiveEffect" abstract="true"
+        eSuperTypes="#//raamllibraries/Effect"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SystemLevelEffect" abstract="true"
+        eSuperTypes="#//raamllibraries/AutomotiveEffect"/>
+    <eClassifiers xsi:type="ecore:EClass" name="VehicleLevelEffect" abstract="true"
+        eSuperTypes="#//raamllibraries/AutomotiveEffect"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ISO26262Library" abstract="true" eSuperTypes="#//raamllibraries/RAAMLLibraries">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operationalcondition"
+          upperBound="-1" eType="#//raamllibraries/OperationalCondition" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="iso26262safetyrequirementtemplate"
+          upperBound="-1" eType="#//raamllibraries/ISO26262SafetyRequirementTemplate"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hazardousevent" upperBound="-1"
+          eType="#//raamllibraries/HazardousEvent" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="accidentscenario" upperBound="-1"
+          eType="#//raamllibraries/AccidentScenario" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="STPALibrary" abstract="true" eSuperTypes="#//raamllibraries/RAAMLLibraries">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lossscenario" upperBound="-1"
+          eType="#//raamllibraries/LossScenario" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processmodelflaw" upperBound="-1"
+          eType="#//raamllibraries/ProcessModelFlaw" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="undesiredcontrolaction"
+          upperBound="-1" eType="#//raamllibraries/UndesiredControlAction" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LossScenario" abstract="true" eSuperTypes="#//raamllibraries/Scenario">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="causalFactor" upperBound="-1"
+          eType="#//raamllibraries/Factor" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processmodelflaw" upperBound="-1"
+          eType="#//raamllibraries/ProcessModelFlaw" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="undesiredcontrolaction"
+          upperBound="-1" eType="#//raamllibraries/UndesiredControlAction"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessModelFlaw" eSuperTypes="#//raamllibraries/AnySituation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="causalFactor" upperBound="-1"
+          eType="#//raamllibraries/Factor" eOpposite="#//raamllibraries/Factor/processModelFlaw"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="undesiredcontrolaction"
+          upperBound="-1" eType="#//raamllibraries/UndesiredControlAction" eOpposite="#//raamllibraries/UndesiredControlAction/processmodelflaw">
+        <eAnnotations source="http://www.eclipse.org/emf/GenModel">
+          <details key="documentation" value="ProcessModelFlawConsequence"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/eSuperTypeInfo">
+          <details key="eSuperType" value="Causality"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InadequateControlDecisions" abstract="true"
+        eSuperTypes="#//raamllibraries/ProcessModelFlaw"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InadequateProcessBehavior" abstract="true"
+        eSuperTypes="#//raamllibraries/ProcessModelFlaw"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InadequateControlExecution" abstract="true"
+        eSuperTypes="#//raamllibraries/ProcessModelFlaw"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InadequateFeedbackAndInputs" abstract="true"
+        eSuperTypes="#//raamllibraries/ProcessModelFlaw"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UndesiredControlAction" abstract="true"
+        eSuperTypes="#//methods/UndesiredControlAction #//raamllibraries/UndesiredState">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
+          eType="#//raamllibraries/AbstractOperationalSituation" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processmodelflaw" upperBound="-1"
+          eType="#//raamllibraries/ProcessModelFlaw" eOpposite="#//raamllibraries/ProcessModelFlaw/undesiredcontrolaction"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="harmpotential" upperBound="-1"
+          eType="#//raamllibraries/HarmPotential" eOpposite="#//raamllibraries/HarmPotential/undesiredcontrolaction"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OutOfSequence" abstract="true" eSuperTypes="#//raamllibraries/UndesiredControlAction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TooLong" abstract="true" eSuperTypes="#//raamllibraries/UndesiredControlAction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TooShort" abstract="true" eSuperTypes="#//raamllibraries/UndesiredControlAction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Provided" abstract="true" eSuperTypes="#//raamllibraries/UndesiredControlAction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NotProvided" abstract="true" eSuperTypes="#//raamllibraries/UndesiredControlAction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LateUCA" abstract="true" eSuperTypes="#//raamllibraries/UndesiredControlAction"/>
+    <eClassifiers xsi:type="ecore:EClass" name="EarlyUCA" abstract="true" eSuperTypes="#//raamllibraries/UndesiredControlAction"/>
+  </eSubpackages>
+</ecore:EPackage>

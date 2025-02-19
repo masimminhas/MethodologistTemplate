@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/tools.vitruv.methodologisttemplate.model/target/generated-sources/ecore"
+    modelPluginID="tools.vitruv.methodologisttemplate.raaml" modelName="Raaml" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>raaml.ecore</foreignModel>
+  <genPackages prefix="Raaml" basePackage="tools.vitruv.methodologisttemplate" disposableProviderFactory="true"
+      ecorePackage="raaml.ecore#/">
+    <genClasses ecoreClass="raaml.ecore#//SafetyAnalysis">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//SafetyAnalysis/analysismethods"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//SafetyAnalysis/raamllibraries"/>
+    </genClasses>
+    <nestedGenPackages prefix="CorePackage" disposableProviderFactory="true" ecorePackage="raaml.ecore#//corePackage">
+      <genClasses image="false" ecoreClass="raaml.ecore#//corePackage/CoreSafetyElement"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/Situation"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//corePackage/UMLClass"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//corePackage/SysMLBlock"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/ControllingMeasure">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//corePackage/ControllingMeasure/affects"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/FailureMode"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/Hazard"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/Error"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/Fault"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/Detection"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/Recommendation"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/Mitigation"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/Prevention"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//corePackage/DirectedPropertyRelationshipPath"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//corePackage/Dependency"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/RelevantTo"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/PresentIn"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/Violates"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/IDCarrier">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//corePackage/IDCarrier/Id"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//corePackage/Element"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/Undeveloped"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//corePackage/State"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/FailureState"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//corePackage/Item">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//corePackage/Item/member"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//corePackage/Item/boundaryMember"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/SingleElementItem">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//corePackage/SingleElementItem/referencedElement"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//corePackage/Comment"/>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/ElementGroup">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//corePackage/ElementGroup/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//corePackage/ElementGroup/criterion"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//corePackage/ElementGroup/size"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//corePackage/ElementGroup/orderedMember"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//corePackage/ElementGroupBasedItem"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Methods" disposableProviderFactory="true" ecorePackage="raaml.ecore#//methods">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="raaml.ecore#//methods/ASIL">
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/noassignment"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/QM"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/A"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/B"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/C"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/D"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/AB"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/AC"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/AD"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/BC"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/CD"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/AA"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/BB"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/CC"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/DD"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/QMA"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/QMB"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/QMC"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//methods/ASIL/QMD"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/AnalysisMethods">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/AnalysisMethods/coresafetyelement"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//methods/FMEA">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/FMEA/fmeaitem"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//methods/FMEAItem"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/UMLClass"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/SysMLBlock"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/FTA">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/FTA/gate"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/FTA/event"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//methods/Gate"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/Tree"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/AND"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/OR"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/XOR"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/NOT"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/INHIBIT"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/MAJORITY_VOTE"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/Situation"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/TransferOut"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/SEQ"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/Event"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/TransferIn"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/BasicEvent"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/UMLProperty"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/HouseEvent"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/DormantEvent"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/TopEvent"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/IntermediateEvent"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/ZeroEvent"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/ConditionalEvent"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/DataType"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/Signal"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/ControlAction"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/Feedback"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/UndesiredControlAction"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/UnsafeControlAction"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/ControlledProcess"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/Actuator"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/Sensor"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/Controller"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/ControlStrcucture"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/LossScenario"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/ISO26262">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/ISO26262/malfunctioningbehaviour"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/ISO26262/operationalsituation"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/ISO26262/confirmed"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/ISO26262/verified"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/ISO26262/asilassignment"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/ISO26262/requirementcomponent"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//methods/OperationalSituation"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/MalfunctioningBehaviour"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/Verified">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//methods/Verified/result"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//methods/STPA">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/STPA/controller"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/STPA/sensor"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/STPA/actuator"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/STPA/controlaction"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/STPA/feedback"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/STPA/controlledprocess"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/STPA/undesiredcontrolaction"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/STPA/unsafecontrolaction"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/STPA/lossscenario"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/STPA/controlstrcucture"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//methods/Confirmed">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//methods/Confirmed/result"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/Comment"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/LessonLearned"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/Element"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/ASILAssignment">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//methods/ASILAssignment/ASIL"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//methods/ASILAssignment/ASILOverride"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//methods/ASILOverrideRationale"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/Rationale"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/InContextOf"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/SupportedBy"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/Dependency"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/Goal"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/Strategy"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/GSNArgumentNode"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/Solution"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/GSNNode">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//methods/GSNNode/Id"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//methods/ContextualInformation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//methods/ContextualInformation/Id"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//methods/Context"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/Justification"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/Assumption"/>
+      <genClasses ecoreClass="raaml.ecore#//methods/GSN">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/GSN/contextualinformation"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/GSN/gsnnode"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/GSN/supportedby"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//methods/GSN/incontextof"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Requirementsmanagement" disposableProviderFactory="true"
+        ecorePackage="raaml.ecore#//requirementsmanagement">
+      <genClasses image="false" ecoreClass="raaml.ecore#//requirementsmanagement/Abstraction"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/IndependenceRequirement"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/DeriveRequirement"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/ASILDecompose"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/Satisfy"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/UserInfoRequirement"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/RecoveryRequirement"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/DependabilityRequirement"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/Requirement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//requirementsmanagement/Requirement/Id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//requirementsmanagement/Requirement/text"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/FunctionalSafetyRequirement"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//requirementsmanagement/Dependency"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/SafeState"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/OperatingMode"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/SoftwareSafetyRequirement"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/HardwareSafetyRequirement"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/TechnicalSafetyRequirement"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/SafetyGoal"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//requirementsmanagement/Block"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//requirementsmanagement/AbstractRequirement"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//requirementsmanagement/NamedElement"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//requirementsmanagement/Package"/>
+      <genClasses ecoreClass="raaml.ecore#//requirementsmanagement/HazardAndRiskAssessment"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//requirementsmanagement/RequirementComponent"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Raamllibraries" disposableProviderFactory="true" ecorePackage="raaml.ecore#//raamllibraries">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="raaml.ecore#//raamllibraries/HouseEventProbability">
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/HouseEventProbability/OCCURS"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/HouseEventProbability/NOT_OCCUR"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="raaml.ecore#//raamllibraries/Controllability">
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/Controllability/C0"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/Controllability/C1"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/Controllability/C2"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/Controllability/C3"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="raaml.ecore#//raamllibraries/Exposure">
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/Exposure/E0"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/Exposure/E1"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/Exposure/E2"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/Exposure/E3"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/Exposure/E4"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="raaml.ecore#//raamllibraries/Severity">
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/Severity/S0"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/Severity/S1"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/Severity/S2"/>
+        <genEnumLiterals ecoreEnumLiteral="raaml.ecore#//raamllibraries/Severity/S3"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/RAAMLLibraries"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/GeneralLibrary">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/GeneralLibrary/anysituation"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/AnySituation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/AnySituation/from"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/AnySituation/to"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Scenario">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/Scenario/scenariostep"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/Scenario/trigger"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/AbstractRisk">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/AbstractRisk/score"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/AbstractRisk/harmpotential"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/AbstractRisk/harm"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/HarmPotential">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/HarmPotential/undesiredcontrolaction"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Factor">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/Factor/processModelFlaw"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Limitation"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/AbstractEvent">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/AbstractEvent/likelihood"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/DysfunctionalEvent">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/DysfunctionalEvent/toError"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/DysfunctionalEvent/fromError"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/DysfunctionalEvent/error"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/DysfunctionalEvent/failure"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/DysfunctionalEvent/fault"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/AbstractEffect">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/AbstractEffect/severity"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/UndesiredState"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Effect">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/Effect/premitigationSeverities"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Loss"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/AbstractFailureMode">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/AbstractFailureMode/detectability"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/AbstractFailureMode/premitigationDetectabilities"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/FailureMode"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/AbstractCause">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/AbstractCause/occurrence"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/AbstractCause/premitigationOccurrences"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/AbstractCause/error"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Cause"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Hazard"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/FMEALibrary">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/FMEALibrary/abstractfmeaitem"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/RPNCalculation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/RPNCalculation/RPN"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/RPNCalculation/SEV"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/RPNCalculation/OCC"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/RPNCalculation/DET"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/ConstraintBlock"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/AbstractFMEAItem">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/AbstractFMEAItem/RPN"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/AbstractFMEAItem/failureMode"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/AbstractFMEAItem/finalEffect"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/AbstractFMEAItem/cause"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/FMEAItem">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/FMEAItem/rpncalculation"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/LossOfFunction"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/DegradationOfFunction"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/IntermittentFunction"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/PartialFunction"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/ExceedingFunction"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/UnintendedFunction"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/DelayedFunction"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/FTAElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/FTAElement/probability"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/FTAElement/sourceGate"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Event">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/Event/priority"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/Event/targetGate"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/Event/INHIBITGate"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/BasicEvent"/>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/IntermediateEvent">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/IntermediateEvent/ieProbability"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/TopEvent">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/TopEvent/tProbability"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/ConditionalEvent"/>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/DormantEvent"/>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/UndevelopedEvent"/>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/HouseEvent">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/HouseEvent/heProbability"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/ZeroEvent">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/ZeroEvent/zeProbability"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/AND"/>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/OR"/>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/NOT"/>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/XOR"/>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/SEQ"/>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/INHIBIT">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/INHIBIT/condition"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Gate">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/Gate/sourceEvent"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/Gate/targetEvent"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/MAJORITY_VOTE">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/MAJORITY_VOTE/m"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/FTATree">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/FTATree/topEvent"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/FTALibrary">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/FTALibrary/ftaelement"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/FTALibrary/gate"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/OperationalCondition"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/AbstractOperationalSituation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/AbstractOperationalSituation/Exposure"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/AbstractOperationalSituation/conditions"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/TypicalAutomotiveSituation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/TypicalAutomotiveSituation/trafficandpeople"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/TypicalAutomotiveSituation/vehicleusage"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/TypicalAutomotiveSituation/roadcondition"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/TypicalAutomotiveSituation/location"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/TypicalAutomotiveSituation/environmentalcondition"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/TrafficAndPeople"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/VehicleUsage"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/RoadCondition"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Location"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/EnvironmentalCondition"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/AccidentScenario">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/AccidentScenario/controllability"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/AccidentScenario/situation"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/AccidentScenario/malfunctioingBehavior"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/AnyMalfunction"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/More"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Less"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Intermittent"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Unintended"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Early"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Late"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Inverted"/>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/ISO26262SafetyRequirementTemplate">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/ISO26262SafetyRequirementTemplate/ASIL"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/ISO26262SafetyRequirementTemplate/FTTI"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/HazardousEvent">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute raaml.ecore#//raamllibraries/HazardousEvent/ASIL"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/HazardousEvent/hazard"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/HazardousEvent/scenario"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/HazardousEvent/vehicleleveleffect"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/HazardousEvent/systemleveleffect"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/AutomotiveEffect"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/SystemLevelEffect"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/VehicleLevelEffect"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/ISO26262Library">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/ISO26262Library/operationalcondition"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/ISO26262Library/iso26262safetyrequirementtemplate"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/ISO26262Library/hazardousevent"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/ISO26262Library/accidentscenario"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/STPALibrary">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/STPALibrary/lossscenario"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/STPALibrary/processmodelflaw"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/STPALibrary/undesiredcontrolaction"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/LossScenario">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/LossScenario/causalFactor"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/LossScenario/processmodelflaw"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/LossScenario/undesiredcontrolaction"/>
+      </genClasses>
+      <genClasses ecoreClass="raaml.ecore#//raamllibraries/ProcessModelFlaw">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/ProcessModelFlaw/causalFactor"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/ProcessModelFlaw/undesiredcontrolaction"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/InadequateControlDecisions"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/InadequateProcessBehavior"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/InadequateControlExecution"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/InadequateFeedbackAndInputs"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/UndesiredControlAction">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/UndesiredControlAction/context"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/UndesiredControlAction/processmodelflaw"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference raaml.ecore#//raamllibraries/UndesiredControlAction/harmpotential"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/OutOfSequence"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/TooLong"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/TooShort"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/Provided"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/NotProvided"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/LateUCA"/>
+      <genClasses image="false" ecoreClass="raaml.ecore#//raamllibraries/EarlyUCA"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

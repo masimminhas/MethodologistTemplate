@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ros" nsURI="http://vitruv.tools/methodologisttemplate/rosmm" nsPrefix="ros">
+  <eClassifiers xsi:type="ecore:EClass" name="CMakeLists" eSuperTypes="rosprofile.ecore#//rosProfile/SysMLBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosPackage" ordered="false"
+        eType="#//ROSPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationChannel" eSuperTypes="#//System">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comComponent" ordered="false"
+        upperBound="-1" eType="#//ROSCommunicatingComponent" eOpposite="#//ROSCommunicatingComponent/commChannel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GroupOfPackages" eSuperTypes="#//SourcesContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repo" ordered="false" eType="#//Repository"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hardware" eSuperTypes="rosprofile.ecore#//rosProfile/Hardware">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system" ordered="false"
+        eType="#//System"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MicroROSNode" eSuperTypes="#//ROSNode rosprofile.ecore#//rosProfile/MicroNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="XMLPackage" eSuperTypes="rosprofile.ecore#//rosProfile/SysMLBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xmlPackage" ordered="false"
+        eType="#//ROSPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//SourcesContainer rosprofile.ecore#//rosProfile/Repository">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosWorkSpace" ordered="false"
+        eType="#//ROSWorkspace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSActionConnection" eSuperTypes="#//ROSConnection rosprofile.ecore#//rosProfile/ActionConn">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="client" ordered="false"
+        upperBound="-1" eType="#//ROSCommunicatingComponent" eOpposite="#//ROSCommunicatingComponent/server"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionDS" ordered="false"
+        eType="#//ROSActionDataStructure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="server" ordered="false"
+        eType="#//ROSCommunicatingComponent" eOpposite="#//ROSCommunicatingComponent/rosActionConn"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runningSysComp" ordered="false"
+        eType="#//RunningSystemComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosNameSpace" ordered="false"
+        eType="#//ROSNamespace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSActionDataStructure" eSuperTypes="rosprofile.ecore#//rosProfile/ActionStruct">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosPKG" ordered="false"
+        eType="#//ROSPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosComComponent" ordered="false"
+        upperBound="-1" eType="#//ROSCommunicatingComponent" eOpposite="#//ROSCommunicatingComponent/rosActionDS"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSCommunicatingComponent" eSuperTypes="rosprofile.ecore#//rosProfile/RosCompon">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosSrvConn" ordered="false"
+        upperBound="-1" eType="#//ROSServiceConnection" eOpposite="#//ROSServiceConnection/client"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publisher" ordered="false"
+        upperBound="-1" eType="#//ROSTopicConnection" eOpposite="#//ROSTopicConnection/subscriber"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosNS" ordered="false"
+        eType="#//ROSNamespace"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="server" ordered="false"
+        upperBound="-1" eType="#//ROSActionConnection" eOpposite="#//ROSActionConnection/client"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subscriber" ordered="false"
+        upperBound="-1" eType="#//ROSTopicConnection" eOpposite="#//ROSTopicConnection/publisher"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commChannel" ordered="false"
+        upperBound="-1" eType="#//CommunicationChannel" eOpposite="#//CommunicationChannel/comComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosMsgDS" ordered="false"
+        upperBound="-1" eType="#//ROSMsgDataStructure" eOpposite="#//ROSMsgDataStructure/rosCommComp"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="client" ordered="false"
+        upperBound="-1" eType="#//ROSServiceConnection" eOpposite="#//ROSServiceConnection/server"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="srvStruct" ordered="false"
+        upperBound="-1" eType="#//ROSSrvDataStructure" eOpposite="#//ROSSrvDataStructure/rosCommComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosActionDS" ordered="false"
+        upperBound="-1" eType="#//ROSActionDataStructure" eOpposite="#//ROSActionDataStructure/rosComComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosConnection" ordered="false"
+        eType="#//ROSConnection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosActionConn" ordered="false"
+        upperBound="-1" eType="#//ROSActionConnection" eOpposite="#//ROSActionConnection/server"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSComponentContainer" eSuperTypes="#//RunningSystemComponent rosprofile.ecore#//rosProfile/ComponContain"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSConnection" eSuperTypes="#//RunningSystemComponent rosprofile.ecore#//rosProfile/RosConn">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rsNS" ordered="false" eType="#//ROSNamespace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSMaster" eSuperTypes="#//ROSNode rosprofile.ecore#//rosProfile/Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSMetaPackage" eSuperTypes="#//ROSPackage rosprofile.ecore#//rosProfile/Package rosprofile.ecore#//rosProfile/MetaPackage"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSMsgDataStructure" eSuperTypes="rosprofile.ecore#//rosProfile/MsgStruct">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosPackage" ordered="false"
+        eType="#//ROSPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosCommComp" ordered="false"
+        upperBound="-1" eType="#//ROSCommunicatingComponent" eOpposite="#//ROSCommunicatingComponent/rosMsgDS"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSNamespace" eSuperTypes="#//RunningSystemComponent rosprofile.ecore#//rosProfile/NameSpace"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSNode" eSuperTypes="#//RunningSystemComponent rosprofile.ecore#//rosProfile/RunSystemCompon">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosCompContainer" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//ROSComponentContainer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosPackage" ordered="false"
+        eType="#//ROSPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosNameSpace" ordered="false"
+        eType="#//ROSNamespace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSNodelet" eSuperTypes="#//ROSCommunicatingComponent rosprofile.ecore#//rosProfile/Nodelet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodelet" ordered="false"
+        upperBound="-1" eType="#//ROSPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rsNode" ordered="false"
+        upperBound="-1" eType="#//ROSNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSPackage" eSuperTypes="#//SourcesContainer rosprofile.ecore#//rosProfile/Package">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containingPackages" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//GroupOfPackages"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Workspaces" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//ROSWorkspace"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repos" ordered="false"
+        eType="#//Repository"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSParameter" eSuperTypes="#//RunningSystemComponent rosprofile.ecore#//rosProfile/Parameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="NS" ordered="false" eType="#//ROSNamespace"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" ordered="false" eType="#//ROSNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSServiceConnection" eSuperTypes="#//ROSConnection rosprofile.ecore#//rosProfile/ServiceConn">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="client" ordered="false"
+        upperBound="-1" eType="#//ROSCommunicatingComponent" eOpposite="#//ROSCommunicatingComponent/rosSrvConn"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="result" ordered="false"
+        eType="#//ROSActionConnection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cancel" ordered="false"
+        eType="#//ROSActionConnection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runningSysComp" ordered="false"
+        eType="#//RunningSystemComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="server" ordered="false"
+        eType="#//ROSCommunicatingComponent" eOpposite="#//ROSCommunicatingComponent/client"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rsNameSp" ordered="false"
+        eType="#//ROSNamespace"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SrvDS" ordered="false"
+        eType="#//ROSSrvDataStructure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" ordered="false" eType="#//ROSActionConnection"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSSrvDataStructure" eSuperTypes="rosprofile.ecore#//rosProfile/SrvStruct">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosPackage" ordered="false"
+        eType="#//ROSPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosCommComponent" ordered="false"
+        upperBound="-1" eType="#//ROSCommunicatingComponent" eOpposite="#//ROSCommunicatingComponent/srvStruct"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSTopicConnection" eSuperTypes="#//ROSConnection rosprofile.ecore#//rosProfile/TopicConn">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="MsgDS" ordered="false"
+        eType="#//ROSMsgDataStructure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subscriber" ordered="false"
+        upperBound="-1" eType="#//ROSCommunicatingComponent" eOpposite="#//ROSCommunicatingComponent/publisher"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runningSystemComp" ordered="false"
+        eType="#//RunningSystemComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publisher" ordered="false"
+        upperBound="-1" eType="#//ROSCommunicatingComponent" eOpposite="#//ROSCommunicatingComponent/subscriber"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosActionConn" ordered="false"
+        eType="#//ROSActionConnection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rsNameSpac" ordered="false"
+        eType="#//ROSNamespace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSWorkspace" eSuperTypes="#//SourcesContainer rosprofile.ecore#//rosProfile/Workspace"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSOUT" eSuperTypes="#//ROSNode rosprofile.ecore#//rosProfile/Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RunningSystemComponent" eSuperTypes="rosprofile.ecore#//rosProfile/RunSystemCompon">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosNS" ordered="false"
+        eType="#//ROSNamespace"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system" ordered="false"
+        eType="#//System"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourcesContainer" eSuperTypes="rosprofile.ecore#//rosProfile/SourcesContain">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system" ordered="false"
+        eType="#//System"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//ROSCommunicatingComponent rosprofile.ecore#//rosProfile/System"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ROS">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosnode" upperBound="-1"
+        eType="#//ROSNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rosnamespace" upperBound="-1"
+        eType="#//ROSNamespace" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcescontainer" upperBound="-1"
+        eType="#//SourcesContainer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runningsystemcomponent"
+        upperBound="-1" eType="#//RunningSystemComponent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roscommunicatingcomponent"
+        upperBound="-1" eType="#//ROSCommunicatingComponent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cmakelists" upperBound="-1"
+        eType="#//CMakeLists" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

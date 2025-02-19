@@ -1,8 +1,8 @@
 
-import "http://vitruv.tools/methodologisttemplate/model" as model
-import "http://vitruv.tools/methodologisttemplate/model2" as model2
+import "http://vitruv.tools/methodologisttemplate/SysML" as sysml
+import "http://vitruv.tools/methodologisttemplate/raaml" as raaml
 
-reactions: model2Model2
-in reaction to changes in model
-execute actions in model2
+reactions: sysml2raaml
+in reaction to changes in sysml
+execute actions in raaml
 

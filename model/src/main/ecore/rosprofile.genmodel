@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Methodologist-Template/src" modelPluginID="Methodologist-Template"
+    modelName="Rosprofile" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>rosprofile.ecore</foreignModel>
+  <genPackages prefix="Rosprofile" disposableProviderFactory="true" ecorePackage="rosprofile.ecore#/">
+    <nestedGenPackages prefix="RosProfile" disposableProviderFactory="true" ecorePackage="rosprofile.ecore#//rosProfile">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="rosprofile.ecore#//rosProfile/AggregationKind">
+        <genEnumLiterals ecoreEnumLiteral="rosprofile.ecore#//rosProfile/AggregationKind/none"/>
+        <genEnumLiterals ecoreEnumLiteral="rosprofile.ecore#//rosProfile/AggregationKind/Composite"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="rosprofile.ecore#//rosProfile/Direction">
+        <genEnumLiterals ecoreEnumLiteral="rosprofile.ecore#//rosProfile/Direction/BiDirectional"/>
+        <genEnumLiterals ecoreEnumLiteral="rosprofile.ecore#//rosProfile/Direction/DestinationToSource"/>
+        <genEnumLiterals ecoreEnumLiteral="rosprofile.ecore#//rosProfile/Direction/SourceToDestination"/>
+        <genEnumLiterals ecoreEnumLiteral="rosprofile.ecore#//rosProfile/Direction/Unspecified"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="rosprofile.ecore#//rosProfile/ConnectorKind"/>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="rosprofile.ecore#//rosProfile/MessageKind"/>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="rosprofile.ecore#//rosProfile/MessageSort"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/UMLClass">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/UMLClass/isActive"/>
+      </genClasses>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/Hardware"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/Object"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/CommChannel"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Connector">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Connector/direction"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Connector/kind"/>
+      </genClasses>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/ComponContain"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Message">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Message/directionn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Message/messageKind"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Message/messageSort"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Property">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/aggregation"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/default"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/IsComposite"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/isDerived"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/isDerivedUnion"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/isID"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/isReadOnly"/>
+      </genClasses>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/ActionConn"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/GpPackages"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/MetaPackage"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/MicroNode"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/MsgStruct"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/NameSpace"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Port">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Port/isBehavior"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Port/isConjugated"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Port/isService"/>
+      </genClasses>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/Node"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/Nodelet"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/Package"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/Parameter"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/Repository"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/RosCompon"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/RosConn"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/RunSystemCompon"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/ServiceConn"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/SourcesContain"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/SrvStruct"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/System"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/TopicConn"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/Workspace"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/SysMLBlock"/>
+      <genClasses ecoreClass="rosprofile.ecore#//rosProfile/ActionStruct"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

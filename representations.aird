@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" uid="_CqXvAO4XEe-cWr-f5bcFTg" version="15.0.0.202209061200">
+  <semanticResources>consistency/src/main/reactions/tools/vitruv/methodologisttemplate/consistency/templateReactions.reactions</semanticResources>
+  <semanticResources>consistency/target/classes/tools/vitruv/methodologisttemplate/consistency/templateReactions.reactions</semanticResources>
+  <semanticResources>platform:/resource/org.eclipse.uml2.types/model/Types.ecore</semanticResources>
+  <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore</semanticResources>
+  <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel</semanticResources>
+  <semanticResources>platform:/resource/org.eclipse.uml2.types/model/Types.genmodel</semanticResources>
+  <semanticResources>model/src/main/ecore/raaml.ecore</semanticResources>
+  <semanticResources>model/src/main/ecore/raaml.genmodel</semanticResources>
+  <semanticResources>model/src/main/ecore/rosmetamodel.ecore</semanticResources>
+  <semanticResources>model/src/main/ecore/rosprofile.ecore</semanticResources>
+  <semanticResources>model/src/main/ecore/rosmetamodel.genmodel</semanticResources>
+  <semanticResources>model/src/main/ecore/rosprofile.genmodel</semanticResources>
+  <semanticResources>platform:/resource/org.eclipse.uml2.uml/model/UML.ecore</semanticResources>
+  <semanticResources>model/src/main/ecore/types.ecore</semanticResources>
+  <semanticResources>platform:/resource/org.eclipse.uml2.uml.profile.standard/model/Standard.ecore</semanticResources>
+  <semanticResources>model/src/main/ecore/types.genmodel</semanticResources>
+  <semanticResources>model/target/classes/src/main/ecore/raaml.ecore</semanticResources>
+  <semanticResources>model/target/classes/src/main/ecore/raaml.genmodel</semanticResources>
+  <semanticResources>model/target/classes/src/main/ecore/rosmetamodel.ecore</semanticResources>
+  <semanticResources>model/target/classes/src/main/ecore/rosprofile.ecore</semanticResources>
+  <semanticResources>model/target/classes/src/main/ecore/rosmetamodel.genmodel</semanticResources>
+  <semanticResources>model/target/classes/src/main/ecore/rosprofile.genmodel</semanticResources>
+  <semanticResources>model/target/classes/src/main/ecore/types.ecore</semanticResources>
+  <semanticResources>model/target/classes/src/main/ecore/types.genmodel</semanticResources>
+  <semanticResources>model/workflow/generate.mwe2</semanticResources>
+  <semanticResources>vsum/target/vsumexample/vsum/correspondences.correspondence</semanticResources>
+</viewpoint:DAnalysis>

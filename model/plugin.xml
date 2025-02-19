@@ -9,17 +9,150 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated model -->
       <package
-            uri="http://vitruv.tools/methodologisttemplate/model"
-            class="tools.vitruv.methodologisttemplate.model.model.ModelPackage"
-            genModel="src/main/ecore/model.genmodel"/>
+            uri="http://vitruv.tools/methodologisttemplate/sysml"
+            class="tools.vitruv.methodologisttemplate.model.sysml.sysmlPackage"
+            genModel="src/main/ecore/sysml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated model2 -->
       <package
-            uri="http://vitruv.tools/methodologisttemplate/model2"
-            class="tools.vitruv.methodologisttemplate.model.model2.Model2Package"
-            genModel="src/main/ecore/model2.genmodel"/>
+            uri="http://vitruv.tools/methodologisttemplate/raaml"
+            class="tools.vitruv.methodologisttemplate.model.raaml.raamlPackage"
+            genModel="src/main/ecore/raaml.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated raaml -->
+      <package
+            uri="http://vitruv.tools/methodologisttemplate/raaml"
+            class="tools.vitruv.methodologisttemplate.raaml.RaamlPackage"
+            genModel="src/main/ecore/raaml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated raaml -->
+      <package
+            uri="http://vitruv.tools/methodologisttemplate/raaml/corePackage"
+            class="tools.vitruv.methodologisttemplate.raaml.corePackage.CorePackagePackage"
+            genModel="src/main/ecore/raaml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated raaml -->
+      <package
+            uri="http://vitruv.tools/methodologisttemplate/raaml/methods"
+            class="tools.vitruv.methodologisttemplate.raaml.methods.MethodsPackage"
+            genModel="src/main/ecore/raaml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated raaml -->
+      <package
+            uri="http://vitruv.tools/methodologisttemplate/raaml/requirementsmanagement"
+            class="tools.vitruv.methodologisttemplate.raaml.requirementsmanagement.RequirementsmanagementPackage"
+            genModel="src/main/ecore/raaml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated raaml -->
+      <package
+            uri="http://vitruv.tools/methodologisttemplate/raaml/raamllibraries"
+            class="tools.vitruv.methodologisttemplate.raaml.raamllibraries.RaamllibrariesPackage"
+            genModel="src/main/ecore/raaml.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sysml -->
+      <package
+            uri="http://vitruv.tools/methodologisttemplate/sysml"
+            class="tools.vitruv.methodologisttemplate.sysml.SysmlPackage"
+            genModel="src/main/ecore/sysml.genmodel"/>
+   </extension>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sysml -->
+      <package
+            uri="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Activities"
+            class="tools.vitruv.methodologisttemplate.sysml.activities.activitiesPackage"
+            genModel="src/main/ecore/sysml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sysml -->
+      <package
+            uri="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Allocations"
+            class="tools.vitruv.methodologisttemplate.sysml.allocations.allocationsPackage"
+            genModel="src/main/ecore/sysml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sysml -->
+      <package
+            uri="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Blocks"
+            class="tools.vitruv.methodologisttemplate.sysml.blocks.blocksPackage"
+            genModel="src/main/ecore/sysml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sysml -->
+      <package
+            uri="http://www.eclipse.org/papyrus/sysml/1.6/SysML/ConstraintBlocks"
+            class="tools.vitruv.methodologisttemplate.sysml.constraintblocks.constraintblocksPackage"
+            genModel="src/main/ecore/sysml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sysml -->
+      <package
+            uri="http://www.eclipse.org/papyrus/sysml/1.6/SysML/DeprecatedElements"
+            class="tools.vitruv.methodologisttemplate.sysml.deprecatedelements.deprecatedelementsPackage"
+            genModel="src/main/ecore/sysml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sysml -->
+      <package
+            uri="http://www.eclipse.org/papyrus/sysml/1.6/SysML/PortsAndFlows"
+            class="tools.vitruv.methodologisttemplate.sysml.portsandflows.portsandflowsPackage"
+            genModel="src/main/ecore/sysml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sysml -->
+      <package
+            uri="http://www.eclipse.org/papyrus/sysml/1.6/SysML/ModelElements"
+            class="tools.vitruv.methodologisttemplate.sysml.modelelements.modelelementsPackage"
+            genModel="src/main/ecore/sysml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sysml -->
+      <package
+            uri="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Requirements"
+            class="tools.vitruv.methodologisttemplate.sysml.requirements.requirementsPackage"
+            genModel="src/main/ecore/sysml.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sysml -->
+      <package
+            uri="http://www.eclipse.org/uml2/5.0.0/UML"
+            class="tools.vitruv.methodologisttemplate.sysml.uml.umlPackage"
+            genModel="src/main/ecore/sysml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated sysml -->
+      <parser
+            type="uml"
+            class="tools.vitruv.methodologisttemplate.sysml.uml.util.umlResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sysml -->
+      <package
+            uri="https://www.omg.org/spec/UML/20161101/PrimitiveTypes"
+            class="tools.vitruv.methodologisttemplate.sysml.types.TypesPackage"
+            genModel="src/main/ecore/sysml.genmodel"/>
+   </extension>
 </plugin>

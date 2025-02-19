@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rosprofile" nsURI="http://vitruv.tools/methodologisttemplate/rosprofile"
+    nsPrefix="rosprofile">
+  <eSubpackages name="rosProfile" nsURI="http://vitruv.tools/methodologisttemplate/ros/rosProfile"
+      nsPrefix="rosProfile">
+    <eClassifiers xsi:type="ecore:EClass" name="UMLClass">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isActive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Hardware" eSuperTypes="#//rosProfile/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Object"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CommChannel" eSuperTypes="#//rosProfile/UMLClass #//rosProfile/Object #//rosProfile/Connector"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//rosProfile/Direction"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//rosProfile/ConnectorKind"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponContain" eSuperTypes="#//rosProfile/UMLClass #//rosProfile/Object"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Message" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="directionn" eType="#//rosProfile/Direction"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageKind" eType="#//rosProfile/MessageKind"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageSort" eType="#//rosProfile/MessageSort"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Property" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregation" eType="#//rosProfile/AggregationKind"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsComposite" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDerived" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDerivedUnion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReadOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActionConn" eSuperTypes="#//rosProfile/Object #//rosProfile/UMLClass #//rosProfile/Property #//rosProfile/Message"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="AggregationKind">
+      <eLiterals name="none"/>
+      <eLiterals name="Composite" value="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="Direction">
+      <eLiterals name="BiDirectional" literal="BiDirectional"/>
+      <eLiterals name="DestinationToSource" value="1"/>
+      <eLiterals name="SourceToDestination" value="2"/>
+      <eLiterals name="Unspecified" value="3"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ConnectorKind"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="MessageKind"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="MessageSort"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GpPackages" eSuperTypes="#//rosProfile/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MetaPackage" eSuperTypes="#//rosProfile/UMLClass #//rosProfile/Object"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MicroNode" eSuperTypes="#//rosProfile/UMLClass #//rosProfile/Object"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MsgStruct" eSuperTypes="#//rosProfile/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NameSpace" eSuperTypes="#//rosProfile/UMLClass #//rosProfile/Object"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBehavior" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConjugated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isService" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//rosProfile/Port #//rosProfile/UMLClass #//rosProfile/Object"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Nodelet" eSuperTypes="#//rosProfile/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//rosProfile/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//rosProfile/UMLClass #//rosProfile/Object"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//rosProfile/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RosCompon" eSuperTypes="#//rosProfile/Property #//rosProfile/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RosConn" eSuperTypes="#//rosProfile/Object #//rosProfile/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RunSystemCompon" eSuperTypes="#//rosProfile/UMLClass #//rosProfile/Object #//rosProfile/Port"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceConn" eSuperTypes="#//rosProfile/Property #//rosProfile/Message #//rosProfile/Object #//rosProfile/UMLClass #//rosProfile/Connector"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SourcesContain" eSuperTypes="#//rosProfile/Object #//rosProfile/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SrvStruct" eSuperTypes="#//rosProfile/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//rosProfile/UMLClass #//rosProfile/Object #//rosProfile/Port"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TopicConn" eSuperTypes="#//rosProfile/Object #//rosProfile/UMLClass #//rosProfile/Connector #//rosProfile/Property #//rosProfile/Message"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Workspace" eSuperTypes="#//rosProfile/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SysMLBlock" eSuperTypes="#//rosProfile/UMLClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ActionStruct" eSuperTypes="#//rosProfile/UMLClass"/>
+  </eSubpackages>
+</ecore:EPackage>

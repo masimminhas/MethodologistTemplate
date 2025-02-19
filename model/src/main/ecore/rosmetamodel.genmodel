@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/tools.vitruv.methodologisttemplate.model/target/generated-sources/ecore"
+    modelPluginID="tools.vitruv.methodologisttemplate.ros" modelName="Rosmetamodel"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="17.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>rosmetamodel.ecore</foreignModel>
+  <genPackages prefix="ROSMetamodel" basePackage="tools.vitruv.methodologisttemplate.ros"
+      disposableProviderFactory="true" ecorePackage="rosmetamodel.ecore#/">
+    <genClasses ecoreClass="rosmetamodel.ecore#//CMakeLists">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//CMakeLists/rosPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//CommunicationChannel">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//CommunicationChannel/comComponent"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//GroupOfPackages">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//GroupOfPackages/repo"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//Hardware">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//Hardware/system"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//MicroROSNode"/>
+    <genClasses ecoreClass="rosmetamodel.ecore#//XMLPackage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//XMLPackage/xmlPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//Repository">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//Repository/rosWorkSpace"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSActionConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSActionConnection/client"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSActionConnection/actionDS"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSActionConnection/server"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSActionConnection/runningSysComp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSActionConnection/rosNameSpace"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSActionDataStructure">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSActionDataStructure/rosPKG"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSActionDataStructure/rosComComponent"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSCommunicatingComponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSCommunicatingComponent/rosSrvConn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSCommunicatingComponent/publisher"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSCommunicatingComponent/rosNS"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSCommunicatingComponent/server"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSCommunicatingComponent/subscriber"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSCommunicatingComponent/commChannel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSCommunicatingComponent/rosMsgDS"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSCommunicatingComponent/client"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSCommunicatingComponent/srvStruct"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSCommunicatingComponent/rosActionDS"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSCommunicatingComponent/rosConnection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSCommunicatingComponent/rosActionConn"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSComponentContainer"/>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSConnection/rsNS"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSMaster"/>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSMetaPackage"/>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSMsgDataStructure">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSMsgDataStructure/rosPackage"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSMsgDataStructure/rosCommComp"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSNamespace"/>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSNode/rosCompContainer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSNode/rosPackage"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSNode/rosNameSpace"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSNodelet">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSNodelet/nodelet"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSNodelet/rsNode"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSPackage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSPackage/containingPackages"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSPackage/Workspaces"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSPackage/repos"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSParameter/NS"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSParameter/node"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSServiceConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSServiceConnection/client"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSServiceConnection/result"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSServiceConnection/cancel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSServiceConnection/runningSysComp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSServiceConnection/server"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSServiceConnection/rsNameSp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSServiceConnection/SrvDS"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSServiceConnection/goal"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSSrvDataStructure">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSSrvDataStructure/rosPackage"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSSrvDataStructure/rosCommComponent"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSTopicConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSTopicConnection/MsgDS"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSTopicConnection/subscriber"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSTopicConnection/runningSystemComp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSTopicConnection/publisher"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSTopicConnection/rosActionConn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROSTopicConnection/rsNameSpac"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSWorkspace"/>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROSOUT"/>
+    <genClasses ecoreClass="rosmetamodel.ecore#//RunningSystemComponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//RunningSystemComponent/rosNS"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//RunningSystemComponent/system"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//SourcesContainer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//SourcesContainer/system"/>
+    </genClasses>
+    <genClasses ecoreClass="rosmetamodel.ecore#//System"/>
+    <genClasses ecoreClass="rosmetamodel.ecore#//ROS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROS/rosnode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROS/rosnamespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROS/sourcescontainer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROS/runningsystemcomponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROS/roscommunicatingcomponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rosmetamodel.ecore#//ROS/cmakelists"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Ros" basePackage="tools.vitruv.methodologisttemplate.ros" disposableProviderFactory="true"
+      ecorePackage="rosprofile.ecore#/">
+    <nestedGenPackages prefix="RosProfile" basePackage="tools.vitruv.methodologisttemplate.ros"
+        disposableProviderFactory="true" ecorePackage="rosprofile.ecore#//rosProfile">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="rosprofile.ecore#//rosProfile/AggregationKind">
+        <genEnumLiterals ecoreEnumLiteral="rosprofile.ecore#//rosProfile/AggregationKind/none"/>
+        <genEnumLiterals ecoreEnumLiteral="rosprofile.ecore#//rosProfile/AggregationKind/Composite"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="rosprofile.ecore#//rosProfile/Direction">
+        <genEnumLiterals ecoreEnumLiteral="rosprofile.ecore#//rosProfile/Direction/BiDirectional"/>
+        <genEnumLiterals ecoreEnumLiteral="rosprofile.ecore#//rosProfile/Direction/DestinationToSource"/>
+        <genEnumLiterals ecoreEnumLiteral="rosprofile.ecore#//rosProfile/Direction/SourceToDestination"/>
+        <genEnumLiterals ecoreEnumLiteral="rosprofile.ecore#//rosProfile/Direction/Unspecified"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="rosprofile.ecore#//rosProfile/ConnectorKind"/>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="rosprofile.ecore#//rosProfile/MessageKind"/>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="rosprofile.ecore#//rosProfile/MessageSort"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/UMLClass">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/UMLClass/isActive"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Hardware"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Object"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/CommChannel"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Connector">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Connector/direction"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Connector/kind"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/ComponContain"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Message">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Message/directionn"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Message/messageKind"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Message/messageSort"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Property">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/aggregation"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/default"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/IsComposite"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/isDerived"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/isDerivedUnion"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/isID"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Property/isReadOnly"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/ActionConn"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/GpPackages"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/MetaPackage"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/MicroNode"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/MsgStruct"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/NameSpace"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Port">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Port/isBehavior"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Port/isConjugated"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rosprofile.ecore#//rosProfile/Port/isService"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Node"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Nodelet"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Package"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Parameter"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Repository"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/RosCompon"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/RosConn"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/RunSystemCompon"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/ServiceConn"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/SourcesContain"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/SrvStruct"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/System"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/TopicConn"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/Workspace"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/SysMLBlock"/>
+      <genClasses image="false" ecoreClass="rosprofile.ecore#//rosProfile/ActionStruct"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>
