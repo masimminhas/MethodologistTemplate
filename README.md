@@ -1,7 +1,6 @@
 Methodologist Template Project
 ==============================
-This project is a template for the methodologists who are creating a V-SUM.
-
+Shared from Muhammad Minhas
 
 Model
 -----
