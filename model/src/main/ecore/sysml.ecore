@@ -600,7 +600,7 @@
         <details key="documentation" value="A Copy relationship is a dependency between a supplier requirement and a client requirement that specifies that the text of the client requirement is a read-only copy of the text of the supplier requirement."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Trace" eSuperTypes="#//blocks/DirectedRelationshipPropertyPath ../../../../../org.eclipse.uml2.uml.profile.standard/model/Standard.ecore#//Trace">
+    <eClassifiers xsi:type="ecore:EClass" name="Trace" eSuperTypes="#//blocks/DirectedRelationshipPropertyPath http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#//Trace">
       <eOperations name="getTracedFrom" ordered="false" lowerBound="1">
         <eParameters name="ref" ordered="false" lowerBound="1" eType="ecore:EClass UML.ecore#//NamedElement"/>
         <eParameters name="result" ordered="false" upperBound="-1" eType="#//requirements/Requirement"/>
@@ -690,7 +690,7 @@
         <details key="documentation" value="&#xA;            A DeriveReqt relationship is a dependency between two requirements in which a client requirement can be derived from the supplier requirement. As with other dependencies, the arrow direction points from the derived (client) requirement to the (supplier) requirement from which it is derived.&#xA;          "/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Refine" eSuperTypes="#//blocks/DirectedRelationshipPropertyPath ../../../../../org.eclipse.uml2.uml.profile.standard/model/Standard.ecore#//Refine">
+    <eClassifiers xsi:type="ecore:EClass" name="Refine" eSuperTypes="#//blocks/DirectedRelationshipPropertyPath http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#//Refine">
       <eOperations name="getRefines" ordered="false" lowerBound="1">
         <eParameters name="ref" ordered="false" lowerBound="1" eType="ecore:EClass UML.ecore#//NamedElement"/>
         <eParameters name="result" ordered="false" upperBound="-1" eType="#//requirements/Requirement"/>
