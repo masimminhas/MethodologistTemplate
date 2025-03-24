@@ -10,6 +10,19 @@ Workflow {
     bean = StandaloneSetup {
         scanClassPath = true
         platformUri = workspaceRoot
+
+        uriMap = {
+            from = "http://www.eclipse.org/emf/2002/Ecore"
+            to = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore"
+        }
+        uriMap = {
+            from = "http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard"
+            to = "platform:/resource/org.eclipse.uml2.uml.profile.standard/model/Standard.ecore"
+        }
+        uriMap = {
+            from = "http://www.eclipse.org/uml2/5.0.0/Types"
+            to = "platform:/resource/org.eclipse.uml2.types/model/Types.ecore"
+        }
     }
 
     component = EcoreGenerator {
